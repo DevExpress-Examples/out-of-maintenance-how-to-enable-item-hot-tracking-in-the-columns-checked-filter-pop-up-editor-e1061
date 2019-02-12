@@ -25,6 +25,7 @@ namespace WindowsApplication1 {
 
         void ret_Popup(object sender, EventArgs e) {
             CheckedListBoxControl c = (sender as PopupContainerEdit).Properties.PopupControl.Controls[0] as CheckedListBoxControl;
+            c.SelectionMode = SelectionMode.One;
             c.HotTrackItems = true;
         }
     }

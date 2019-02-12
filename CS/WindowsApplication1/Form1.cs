@@ -6,16 +6,22 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace WindowsApplication1 {
-    public partial class Form1 : Form {
-        public Form1() {
+namespace WindowsApplication1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
             InitializeComponent();
+            InitData();
         }
-
-        private void Form1_Load(object sender, EventArgs e) {
-            // TODO: This line of code loads data into the 'carsDBDataSet.Cars' table. You can move, or remove it, as needed.
-            this.carsTableAdapter.Fill(this.carsDBDataSet.Cars);
-
+        public void InitData() {
+            var dt = new DataTable();
+            dt.Columns.Add("ID", typeof(Int32));
+            dt.Columns.Add("Trademark", typeof(string));
+            for (int i = 0; i < 20; i++)
+                dt.Rows.Add(new object[] { i, "Test" + i });
+            myGridControl1.DataSource = dt;
         }
     }
 }

@@ -29,7 +29,8 @@ Namespace WindowsApplication1
 
 		Private Sub ret_Popup(ByVal sender As Object, ByVal e As EventArgs)
 			Dim c As CheckedListBoxControl = TryCast((TryCast(sender, PopupContainerEdit)).Properties.PopupControl.Controls(0), CheckedListBoxControl)
-			c.HotTrackItems = True
-		End Sub
+            c.HotTrackItems = True
+            c.SelectionMode = SelectionMode.One
+        End Sub
 	End Class
 End Namespace
